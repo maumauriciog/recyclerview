@@ -14,7 +14,8 @@ class ContactListAdapter : ListAdapter<dtContact, ContactListAdapter.ContactView
         TODO("Not yet implemented")
     }
 
-    class ContactViewHolder (view: View) : RecyclerView.ViewHolder(view){
+
+    class ContactViewHolder(view: View) : RecyclerView.ViewHolder(view){
 
     }
 
