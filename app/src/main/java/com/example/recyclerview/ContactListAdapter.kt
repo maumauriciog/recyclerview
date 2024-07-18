@@ -9,16 +9,15 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 
+
 class ContactListAdapter : ListAdapter<dtContact, ContactListAdapter.ContactViewHolder>(ContactDiffUtils()){
-    //cria uma view
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.itens_recyclerview, parent, false)
+    val view = LayoutInflater.from(parent.context).inflate(R.layout.itens_recyclerview, parent,false)
         return ContactViewHolder(view)
     }
-    //atrelar a informação com a UI
+
     override fun onBindViewHolder(holder: ContactViewHolder, position: Int) {
-        val contact = getItem(position)
-        holder.bind(contact)
+        holder.bind(getItem(position))
     }
 
     class ContactViewHolder(view: View) : RecyclerView.ViewHolder(view){
