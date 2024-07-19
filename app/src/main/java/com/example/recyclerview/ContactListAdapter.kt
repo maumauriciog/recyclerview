@@ -1,6 +1,5 @@
 package com.example.recyclerview
 
-import android.content.DialogInterface.OnClickListener
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -31,15 +30,19 @@ class ContactListAdapter :
         onClickListener = onClick
     }
 
-    class ContactViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    class ContactViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
         private val tvName = view.findViewById<TextView>(R.id.tv_name)
         private val tvPhone = view.findViewById<TextView>(R.id.tv_phone)
         private val image = view.findViewById<ImageView>(R.id.img)
 
-        fun bind(contact: dtContact) {
+        fun bind(contact: dtContact, onClick: (dtContact) -> Unit) {
             tvName.text = contact.name
             tvPhone.text = contact.phone
             image.setImageResource(contact.icon)
+
+            view.setOnClickListener(){
+                onClick.invoke(contact)
+            }
         }
     }
 
