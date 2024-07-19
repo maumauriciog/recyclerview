@@ -7,12 +7,47 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/tv_TextContacts"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="13dp"
+        android:text="@string/contacts"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/iv_list"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_grid"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="30dp"
+        android:src="@drawable/ic_grid"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_TextContacts"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_TextContacts" />
+
+    <ImageView
+        android:id="@+id/iv_list"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="70dp"
+        android:src="@drawable/ic_list"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_TextContacts"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_TextContacts" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_List"
         tools:listitem="@layout/itens_recyclerview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="13dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/tv_TextContacts" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
