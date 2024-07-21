@@ -1,8 +1,9 @@
 package com.example.recyclerview
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintAttribute
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.recyclerview.databinding.ActivityMainBinding
@@ -17,18 +18,24 @@ class MainActivity : AppCompatActivity() {
         val adapter = ContactListAdapter()
         binding.rvList.adapter = adapter
         binding.rvList.layoutManager = LinearLayoutManager(this)
+
         adapter.submitList(contacts)
 
-        binding.ivGrid.setOnClickListener(){
+        binding.ivGrid.setOnClickListener {
             binding.rvList.layoutManager = GridLayoutManager(this, 2)
         }
 
-        binding.ivList.setOnClickListener(){
+        binding.ivList.setOnClickListener {
             binding.rvList.layoutManager = LinearLayoutManager(this)
         }
 
         adapter.setOnClickListener { contacts ->
+            val intent = Intent(this, ContactDetail::class.java)
+            intent.putExtra("name", contacts.name)
+            intent.putExtra("phone", contacts.phone)
+            intent.putExtra("icon", contacts.icon)
 
+            startActivity(intent)
         }
     }
 }
@@ -45,7 +52,7 @@ val contacts = listOf(
         R.drawable.sample2
     ),
     dtContact(
-        name = "Fulana da Chagas",
+        name = "Jéssica Gonçalves dos Santos",
         phone = "8754-9521",
         R.drawable.sample3
     ),
@@ -55,7 +62,7 @@ val contacts = listOf(
         R.drawable.sample4
     ),
     dtContact(
-        name = "Morena Lena da Chagas",
+        name = "Jessica da Chagas",
         phone = "8754-9521",
         R.drawable.sample5
     ),
@@ -85,7 +92,7 @@ val contacts = listOf(
         R.drawable.sample2
     ),
     dtContact(
-        name = "Fulana da Chagas",
+        name = "Jessica da Chagas",
         phone = "8754-9521",
         R.drawable.sample3
     ),

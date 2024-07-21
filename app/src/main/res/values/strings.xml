@@ -4,4 +4,5 @@
     <string name="img_recyclerview">img_recyclerview</string>
     <string name="name_full">name full</string>
     <string name="contacts">Contacts</string>
+    <string name="telefone">Phone</string>
 </resources>
