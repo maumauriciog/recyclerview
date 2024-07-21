@@ -12,9 +12,6 @@ import androidx.recyclerview.widget.RecyclerView
 
 class ContactListAdapter :
     ListAdapter<dtContact, ContactListAdapter.ContactViewHolder>(ContactDiffUtils()) {
-
-    // variável do tipo função. Utiliza-se a seguinte sintaxe: variável: () -> Unit
-    // esta variável recebe como parâmetro o data class
     private lateinit var onClickListener: (dtContact) -> Unit
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactViewHolder {
@@ -26,7 +23,7 @@ class ContactListAdapter :
         holder.bind(getItem(position), onClickListener)
     }
 
-    fun setOnClickListener(onClick: (dtContact) -> Unit) {
+    fun setOnClickListener (onClick : (dtContact) -> Unit){
         onClickListener = onClick
     }
 
@@ -35,12 +32,12 @@ class ContactListAdapter :
         private val tvPhone = view.findViewById<TextView>(R.id.tv_phone)
         private val image = view.findViewById<ImageView>(R.id.img)
 
-        fun bind(contact: dtContact, onClick: (dtContact) -> Unit) {
+        fun bind(contact: dtContact, onClick : (dtContact) -> Unit) {
             tvName.text = contact.name
             tvPhone.text = contact.phone
             image.setImageResource(contact.icon)
 
-            view.setOnClickListener(){
+            view.setOnClickListener{
                 onClick.invoke(contact)
             }
         }
@@ -50,7 +47,6 @@ class ContactListAdapter :
         override fun areItemsTheSame(oldItem: dtContact, newItem: dtContact): Boolean {
             return newItem == oldItem
         }
-
         override fun areContentsTheSame(oldItem: dtContact, newItem: dtContact): Boolean {
             return newItem.name == oldItem.name
         }
