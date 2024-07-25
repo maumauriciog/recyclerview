@@ -5,4 +5,7 @@
     <string name="name_full">name full</string>
     <string name="contacts">Contacts</string>
     <string name="telefone">Phone</string>
+    <string name="todo">All</string>
+    <string name="nome_click">Nome Click</string>
+    <string name="share">SHARE</string>
 </resources>

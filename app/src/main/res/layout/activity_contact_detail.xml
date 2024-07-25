@@ -7,13 +7,13 @@
     android:layout_height="match_parent"
     tools:context=".ContactDetail">
 
-
     <ImageView
         android:id="@+id/iv_imageResult"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
-        android:layout_marginTop="30sp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_marginStart="20sp"
+        android:layout_marginTop="30sp"
+        android:contentDescription="@string/todo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
@@ -23,9 +23,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:text="Nome Click"
-        android:textStyle="bold"
+        android:text="@string/nome_click"
         android:textSize="19sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/iv_imageResult"
         app:layout_constraintTop_toTopOf="@+id/iv_imageResult" />
 
@@ -38,5 +38,46 @@
         app:layout_constraintStart_toStartOf="@+id/tv_nameResult"
         app:layout_constraintTop_toBottomOf="@+id/tv_nameResult" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertical_guideLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"
+        />
+
+    <TextView
+        android:id="@+id/tv_share"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50sp"
+        android:text="@string/share"
+        app:layout_constraintEnd_toStartOf="@+id/vertical_guideLine"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_imageResult" />
+
+    <ImageView
+        android:id="@+id/iv_Trash"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:contentDescription="@null"
+        android:layout_marginTop="30sp"
+        android:padding="4dp"
+        android:src="@drawable/baseline_phone_enabled_24"
+        app:layout_constraintEnd_toStartOf="@+id/vertical_guideLine"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_share"
+        app:tint="#6FD04A" />
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:contentDescription="@string/todo"
+        android:layout_marginTop="30sp"
+        android:padding="8dp"
+        android:src="@drawable/baseline_auto_delete_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/vertical_guideLine"
+        app:layout_constraintTop_toBottomOf="@+id/tv_share" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
