@@ -13,6 +13,7 @@ class ContactDetail : AppCompatActivity() {
 
         val tv_nameResult = findViewById<TextView>(R.id.tv_nameResult)
         val tv_phoneResult = findViewById<TextView>(R.id.tv_PhoneResult)
+        val tv_share = findViewById<TextView>(R.id.tv_share)
         val image = findViewById<ImageView>(R.id.iv_imageResult)
 
         val nameReceive = intent.getStringExtra("name")
@@ -22,5 +23,16 @@ class ContactDetail : AppCompatActivity() {
         tv_nameResult.text = nameReceive
         tv_phoneResult.text = phoneReceive
         image.setImageResource(iconReceive)
+
+        tv_share.setOnClickListener(){
+            val sendIntent: Intent = Intent().apply {
+                action = Intent.ACTION_SEND
+                putExtra(Intent.EXTRA_TEXT, "$nameReceive | $phoneReceive")
+                type = "text/plain"
+            }
+
+            val shareIntent = Intent.createChooser(sendIntent, null)
+            startActivity(shareIntent)
+        }
     }
 }
