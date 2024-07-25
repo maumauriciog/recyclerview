@@ -10,8 +10,8 @@
 
     <ImageView
         android:id="@+id/iv_imageResult"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_marginTop="30sp"
         android:layout_marginStart="20sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,6 +37,18 @@
         android:textSize="17sp"
         app:layout_constraintStart_toStartOf="@+id/tv_nameResult"
         app:layout_constraintTop_toBottomOf="@+id/tv_nameResult" />
+
+    <ImageView
+        android:id="@+id/iv_Trash"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="40dp"
+        android:contentDescription="@null"
+        android:src="@drawable/baseline_auto_delete_24"
+        app:layout_constraintStart_toStartOf="@id/iv_imageResult"
+        app:layout_constraintTop_toBottomOf="@id/iv_imageResult" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
