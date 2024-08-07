@@ -1,5 +1,6 @@
 package com.example.recyclerview
 
+import android.content.DialogInterface.OnClickListener
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,7 +9,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-
 
 class ContactListAdapter :
     ListAdapter<dtContact, ContactListAdapter.ContactViewHolder>(ContactDiffUtils()) {
@@ -19,36 +19,34 @@ class ContactListAdapter :
             LayoutInflater.from(parent.context).inflate(R.layout.itens_recyclerview, parent, false)
         return ContactViewHolder(view)
     }
+
     override fun onBindViewHolder(holder: ContactViewHolder, position: Int) {
-        holder.bind(getItem(position), onClickListener)
+        holder.bind(getItem(position))
     }
 
-    fun setOnClickListener (onClick : (dtContact) -> Unit){
+    fun setOnClickListener(onClick: (dtContact) -> Unit) {
         onClickListener = onClick
     }
 
-    class ContactViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
+    class ContactViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val tvName = view.findViewById<TextView>(R.id.tv_name)
         private val tvPhone = view.findViewById<TextView>(R.id.tv_phone)
-        private val image = view.findViewById<ImageView>(R.id.img)
+        private val ivImage = view.findViewById<ImageView>(R.id.img)
 
-        fun bind(contact: dtContact, onClick : (dtContact) -> Unit) {
-            tvName.text = contact.name
-            tvPhone.text = contact.phone
-            image.setImageResource(contact.icon)
-
-            view.setOnClickListener{
-                onClick.invoke(contact)
-            }
+        fun bind(dtContact: dtContact) {
+            tvName.text = dtContact.name
+            tvPhone.text = dtContact.phone
+            ivImage.setImageResource(dtContact.icon)
         }
     }
 
     class ContactDiffUtils : DiffUtil.ItemCallback<dtContact>() {
         override fun areItemsTheSame(oldItem: dtContact, newItem: dtContact): Boolean {
-            return newItem == oldItem
+            return oldItem == newItem
         }
+
         override fun areContentsTheSame(oldItem: dtContact, newItem: dtContact): Boolean {
-            return newItem.name == oldItem.name
+            return oldItem.name == newItem.name
         }
     }
 }
