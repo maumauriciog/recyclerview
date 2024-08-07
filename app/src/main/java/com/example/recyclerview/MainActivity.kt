@@ -1,13 +1,14 @@
 package com.example.recyclerview
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.recyclerview.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -16,14 +17,11 @@ class MainActivity : AppCompatActivity() {
         val adapter = ContactListAdapter()
         binding.rvList.adapter = adapter
         binding.rvList.layoutManager = LinearLayoutManager(this)
+
         adapter.submitList(contacts)
 
-        binding.ivList.setOnClickListener {
-            binding.rvList.layoutManager = LinearLayoutManager(this)
-        }
-
-        binding.ivGrid.setOnClickListener {
-            binding.rvList.layoutManager = GridLayoutManager(this, 2)
+        adapter.setOnClickListener {
+            Log.d("Mauricio", contacts.toString())
         }
     }
 }

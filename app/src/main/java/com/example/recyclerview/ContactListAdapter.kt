@@ -22,7 +22,7 @@ class ContactListAdapter :
         holder.bind(getItem(position), onClickListener)
     }
 
-    fun setOnClickListener(onClick : (dtContact) -> Unit){
+    fun setOnClickListener (onClick: (dtContact) -> Unit) {
         onClickListener = onClick
     }
 
@@ -36,7 +36,7 @@ class ContactListAdapter :
             tvPhone.text = dtContact.phone
             ivImage.setImageResource(dtContact.icon)
 
-            view.setOnClickListener(){
+            view.setOnClickListener{
                 onClick.invoke(dtContact)
             }
         }
