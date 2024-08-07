@@ -1,6 +1,5 @@
 package com.example.recyclerview
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -10,6 +9,7 @@ import com.example.recyclerview.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -20,27 +20,69 @@ class MainActivity : AppCompatActivity() {
         binding.rvList.layoutManager = LinearLayoutManager(this)
 
         adapter.submitList(contacts)
+        adapter.setOnClickListener { contacts -> Log.d("Mau", contacts.toString()) }
 
-        binding.ivGrid.setOnClickListener {
-            binding.rvList.layoutManager = GridLayoutManager(this, 2)
-        }
-
-        binding.ivList.setOnClickListener {
+        binding.ivList.setOnClickListener{
             binding.rvList.layoutManager = LinearLayoutManager(this)
         }
 
-        adapter.setOnClickListener { contacts ->
-            val intent = Intent(this, ContactDetail::class.java)
-            intent.putExtra("name", contacts.name)
-            intent.putExtra("phone", contacts.phone)
-            intent.putExtra("icon", contacts.icon)
-
-            startActivity(intent)
+        binding.ivGrid.setOnClickListener{
+            binding.rvList.layoutManager = GridLayoutManager(this, 2)
         }
     }
 }
 
 val contacts = listOf(
+    dtContact(
+        name = "Cremilda da Chagas",
+        phone = "8754-9521",
+        R.drawable.sample9
+    ),
+    dtContact(
+        name = "Fulano Xavier",
+        phone = "8754-9521",
+        R.drawable.sample15
+    ),
+    dtContact(
+        name = "Forum de Tagua",
+        phone = "8754-9521",
+        R.drawable.sample4
+    ),
+    dtContact(
+        name = "Cravo de Cebola",
+        phone = "8754-9521",
+        R.drawable.sample3
+    ),
+    dtContact(
+        name = "Tomada Acústica do le",
+        phone = "8754-9521",
+        R.drawable.sample1
+    ),
+    dtContact(
+        name = "Cremilda da Chagas",
+        phone = "8754-9521",
+        R.drawable.sample9
+    ),
+    dtContact(
+        name = "Fulano Xavier",
+        phone = "8754-9521",
+        R.drawable.sample15
+    ),
+    dtContact(
+        name = "Forum de Tagua",
+        phone = "8754-9521",
+        R.drawable.sample4
+    ),
+    dtContact(
+        name = "Cravo de Cebola",
+        phone = "8754-9521",
+        R.drawable.sample3
+    ),
+    dtContact(
+        name = "Tomada Acústica do le",
+        phone = "8754-9521",
+        R.drawable.sample1
+    ),
     dtContact(
         name = "Joana Gomes Chagas",
         phone = "(61) 999-8765",
@@ -224,11 +266,91 @@ val contacts = listOf(
     dtContact(
         name = "Cremilda da Chagas",
         phone = "8754-9521",
+        R.drawable.sample9
+    ),
+    dtContact(
+        name = "Fulano Xavier",
+        phone = "8754-9521",
+        R.drawable.sample15
+    ),
+    dtContact(
+        name = "Forum de Tagua",
+        phone = "8754-9521",
+        R.drawable.sample4
+    ),
+    dtContact(
+        name = "Cravo de Cebola",
+        phone = "8754-9521",
+        R.drawable.sample3
+    ),
+    dtContact(
+        name = "Tomada Acústica do le",
+        phone = "8754-9521",
+        R.drawable.sample1
+    ),
+    dtContact(
+        name = "Cremilda da Chagas",
+        phone = "8754-9521",
+        R.drawable.sample9
+    ),
+    dtContact(
+        name = "Fulano Xavier",
+        phone = "8754-9521",
+        R.drawable.sample15
+    ),
+    dtContact(
+        name = "Forum de Tagua",
+        phone = "8754-9521",
+        R.drawable.sample4
+    ),
+    dtContact(
+        name = "Cravo de Cebola",
+        phone = "8754-9521",
+        R.drawable.sample3
+    ),
+    dtContact(
+        name = "Tomada Acústica do le",
+        phone = "8754-9521",
+        R.drawable.sample1
+    ),
+    dtContact(
+        name = "Cremilda da Chagas",
+        phone = "8754-9521",
+        R.drawable.sample9
+    ),
+    dtContact(
+        name = "Fulano Xavier",
+        phone = "8754-9521",
+        R.drawable.sample15
+    ),
+    dtContact(
+        name = "Forum de Tagua",
+        phone = "8754-9521",
+        R.drawable.sample4
+    ),
+    dtContact(
+        name = "Cravo de Cebola",
+        phone = "8754-9521",
+        R.drawable.sample3
+    ),
+    dtContact(
+        name = "Tomada Acústica do le",
+        phone = "8754-9521",
+        R.drawable.sample1
+    ),
+    dtContact(
+        name = "Joana Gomes Chagas",
+        phone = "(61) 999-8765",
+        R.drawable.sample1
+    ),
+    dtContact(
+        name = "José Pereira da Silva",
+        phone = "(61) 9875-5885",
         R.drawable.sample2
     ),
     dtContact(
-        name = "Morena Lena da Chagas",
+        name = "Jéssica Gonçalves dos Santos",
         phone = "8754-9521",
-        R.drawable.sample9
+        R.drawable.sample3
     )
 )
