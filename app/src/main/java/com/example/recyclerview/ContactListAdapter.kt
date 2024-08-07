@@ -18,15 +18,16 @@ class ContactListAdapter :
             LayoutInflater.from(parent.context).inflate(R.layout.itens_recyclerview, parent, false)
         return ContactViewHolder(view)
     }
+
     override fun onBindViewHolder(holder: ContactViewHolder, position: Int) {
         holder.bind(getItem(position), onClickListener)
     }
 
-    fun setOnClickListener (onClick: (dtContact) -> Unit) {
+    fun setOnClickListener(onClick: (dtContact) -> Unit) {
         onClickListener = onClick
     }
 
-    class ContactViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
+    class ContactViewHolder(private var view: View) : RecyclerView.ViewHolder(view) {
         private val tvName = view.findViewById<TextView>(R.id.tv_name)
         private val tvPhone = view.findViewById<TextView>(R.id.tv_phone)
         private val ivImage = view.findViewById<ImageView>(R.id.img)
@@ -36,7 +37,7 @@ class ContactListAdapter :
             tvPhone.text = dtContact.phone
             ivImage.setImageResource(dtContact.icon)
 
-            view.setOnClickListener{
+            view.setOnClickListener {
                 onClick.invoke(dtContact)
             }
         }
@@ -46,8 +47,11 @@ class ContactListAdapter :
         override fun areItemsTheSame(oldItem: dtContact, newItem: dtContact): Boolean {
             return oldItem == newItem
         }
+
         override fun areContentsTheSame(oldItem: dtContact, newItem: dtContact): Boolean {
             return oldItem.name == newItem.name
         }
     }
+
+
 }

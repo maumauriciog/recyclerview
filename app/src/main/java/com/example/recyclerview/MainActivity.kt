@@ -3,6 +3,7 @@ package com.example.recyclerview
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.recyclerview.databinding.ActivityMainBinding
 
@@ -19,9 +20,14 @@ class MainActivity : AppCompatActivity() {
         binding.rvList.layoutManager = LinearLayoutManager(this)
 
         adapter.submitList(contacts)
+        adapter.setOnClickListener { contacts -> Log.d("Mau", contacts.toString()) }
 
-        adapter.setOnClickListener {
-            Log.d("Mauricio", contacts.toString())
+        binding.ivList.setOnClickListener{
+            binding.rvList.layoutManager = LinearLayoutManager(this)
+        }
+
+        binding.ivGrid.setOnClickListener{
+            binding.rvList.layoutManager = GridLayoutManager(this, 2)
         }
     }
 }
