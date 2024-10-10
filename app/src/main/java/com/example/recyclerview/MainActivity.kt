@@ -22,11 +22,11 @@ class MainActivity : AppCompatActivity() {
         adapter.submitList(contacts)
         adapter.setOnClickListener { contacts -> Log.d("Mau", contacts.toString()) }
 
-        binding.ivList.setOnClickListener{
+        binding.ivList.setOnClickListener {
             binding.rvList.layoutManager = LinearLayoutManager(this)
         }
 
-        binding.ivGrid.setOnClickListener{
+        binding.ivGrid.setOnClickListener {
             binding.rvList.layoutManager = GridLayoutManager(this, 2)
         }
     }
@@ -54,7 +54,7 @@ val contacts = listOf(
         R.drawable.sample3
     ),
     dtContact(
-        name = "Tomada Acústica do le",
+        name = "Tomada Ant do le",
         phone = "8754-9521",
         R.drawable.sample1
     ),
@@ -79,7 +79,7 @@ val contacts = listOf(
         R.drawable.sample3
     ),
     dtContact(
-        name = "Tomada Acústica do le",
+        name = "Tomada Ant do le",
         phone = "8754-9521",
         R.drawable.sample1
     ),
@@ -89,12 +89,12 @@ val contacts = listOf(
         R.drawable.sample1
     ),
     dtContact(
-        name = "José Pereira da Silva",
+        name = "José Pep da Silva",
         phone = "(61) 9875-5885",
         R.drawable.sample2
     ),
     dtContact(
-        name = "Jéssica Gonçalves dos Santos",
+        name = "Jéssica G. dos Santos",
         phone = "8754-9521",
         R.drawable.sample3
     ),
@@ -109,7 +109,7 @@ val contacts = listOf(
         R.drawable.sample5
     ),
     dtContact(
-        name = "Mariana Pereira da Chagas",
+        name = "Mariana Pep da Chagas",
         phone = "8754-9521",
         R.drawable.sample6
     ),
@@ -119,7 +119,7 @@ val contacts = listOf(
         R.drawable.sample7
     ),
     dtContact(
-        name = "Maurício Gomes Chagas",
+        name = "Maurício G. Chagas",
         phone = "8754-9521",
         R.drawable.sample8
     ),
@@ -129,12 +129,12 @@ val contacts = listOf(
         R.drawable.sample9
     ),
     dtContact(
-        name = "Carlos Messias Silva",
+        name = "Carlos M. Silva",
         phone = "8754-9521",
         R.drawable.sample2
     ),
     dtContact(
-        name = "Jessica da Chagas",
+        name = "Jessica Chagas",
         phone = "8754-9521",
         R.drawable.sample3
     ),
@@ -159,7 +159,7 @@ val contacts = listOf(
         R.drawable.sample1
     ),
     dtContact(
-        name = "José Pereira da Silva",
+        name = "José P. da Silva",
         phone = "(61) 9875-5885",
         R.drawable.sample2
     ),
@@ -174,7 +174,7 @@ val contacts = listOf(
         R.drawable.sample4
     ),
     dtContact(
-        name = "Morena Lena da Chagas",
+        name = "Morena L. da Chagas",
         phone = "8754-9521",
         R.drawable.sample5
     ),
@@ -199,7 +199,7 @@ val contacts = listOf(
         R.drawable.sample1
     ),
     dtContact(
-        name = "José Pereira da Silva",
+        name = "José P. da Silva",
         phone = "(61) 9875-5885",
         R.drawable.sample2
     ),
@@ -214,7 +214,7 @@ val contacts = listOf(
         R.drawable.sample2
     ),
     dtContact(
-        name = "Morena Lena da Chagas",
+        name = "Morena L. da Chagas",
         phone = "8754-9521",
         R.drawable.sample9
     ),
@@ -224,12 +224,12 @@ val contacts = listOf(
         R.drawable.sample3
     ),
     dtContact(
-        name = "Cremilda da Chagas",
+        name = "Cremilda Chagas",
         phone = "8754-9521",
         R.drawable.sample4
     ),
     dtContact(
-        name = "Morena Lena da Chagas",
+        name = "Morena Chagas",
         phone = "8754-9521",
         R.drawable.sample5
     ),
@@ -254,7 +254,7 @@ val contacts = listOf(
         R.drawable.sample1
     ),
     dtContact(
-        name = "José Pereira da Silva",
+        name = "José Pep da Silva",
         phone = "(61) 9875-5885",
         R.drawable.sample2
     ),
@@ -264,7 +264,7 @@ val contacts = listOf(
         R.drawable.sample1
     ),
     dtContact(
-        name = "Cremilda da Chagas",
+        name = "Cremilda Chagas",
         phone = "8754-9521",
         R.drawable.sample9
     ),
@@ -284,7 +284,7 @@ val contacts = listOf(
         R.drawable.sample3
     ),
     dtContact(
-        name = "Tomada Acústica do le",
+        name = "Tomada Mab do le",
         phone = "8754-9521",
         R.drawable.sample1
     ),
@@ -309,7 +309,7 @@ val contacts = listOf(
         R.drawable.sample3
     ),
     dtContact(
-        name = "Tomada Acústica do le",
+        name = "Tomada Ac. do le",
         phone = "8754-9521",
         R.drawable.sample1
     ),
@@ -334,23 +334,18 @@ val contacts = listOf(
         R.drawable.sample3
     ),
     dtContact(
-        name = "Tomada Acústica do le",
+        name = "Tomada Ac. do le",
         phone = "8754-9521",
         R.drawable.sample1
     ),
     dtContact(
-        name = "Joana Gomes Chagas",
+        name = "Joana G Chagas",
         phone = "(61) 999-8765",
         R.drawable.sample1
     ),
     dtContact(
-        name = "José Pereira da Silva",
+        name = "José Pep da Silva",
         phone = "(61) 9875-5885",
         R.drawable.sample2
-    ),
-    dtContact(
-        name = "Jéssica Gonçalves dos Santos",
-        phone = "8754-9521",
-        R.drawable.sample3
     )
 )
