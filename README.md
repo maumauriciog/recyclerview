@@ -2,7 +2,7 @@
 O app Recyclerview, desenvolvido em linguagem nativa de programação kotlin, .
 
 ## 📱 Screenshots
-<img src="/readme/Screenshot_20241010_143739a.png" width="250"> <img src="/readme/Screenshot_20241010_144138b.png" width="250">
+<img src="/result/Screenshot_20241010_143739a.png" width="250"> <img src="/result/Screenshot_20241010_144138b.png" width="250">
 
 ## 💻 Tecnologias
 - kotlin
